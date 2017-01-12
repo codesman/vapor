@@ -20,7 +20,6 @@ extension Droplet: Responder {
 
             https://tools.ietf.org/html/rfc2616#section-9.4
         */
-        let originalMethod = request.method
         if case .head = request.method {
             request.method = .get
         }
