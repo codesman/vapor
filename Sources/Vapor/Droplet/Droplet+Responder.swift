@@ -70,16 +70,6 @@ extension Droplet: Responder {
                 )
             }
         }
-
-        /**
-            The server MUST NOT return a message-body in the response for HEAD.
-
-            https://tools.ietf.org/html/rfc2616#section-9.4
-         */
-        if case .head = originalMethod {
-            // TODO: What if body is set to chunked¿?
-            response.body = .data([])
-        }
         
         return response
     }
